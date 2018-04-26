@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Score Keeper</string>
+    <string name="homeName">Seattle Seahawks</string>
+    <string name="zeroPoints">0</string>
+    <string name="touchdown">Touchdown</string>
+    <string name="fieldGoal">Field goal</string>
+    <string name="extraPoint">Extra point</string>
+    <string name="safety">Safety</string>
+    <string name="otherTeam">Other Team</string>
+    <string name="undo">Undo</string>
+    <string name="reset">Reset</string>
+</resources>

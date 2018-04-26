@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#dfdfdf"
+    tools:context="net.drunkdogs.scorekeeper.MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="1"
+        android:scaleType="centerCrop"
+        android:src="@drawable/frontseahawks" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:padding="16dp"
+                android:text="@string/homeName"
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/team_a_score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:padding="4dp"
+                android:text="@string/zeroPoints"
+                android:textColor="#FFFFFF"
+                android:textSize="56sp" />
+
+            <Button
+                style="@style/buttonMargins"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:onClick="touchdownTeamA"
+                android:text="@string/touchdown" />
+
+            <Button
+                style="@style/buttonMargins"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="fieldGoalTeamA"
+                android:text="@string/fieldGoal" />
+
+            <Button
+                style="@style/buttonMargins"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="extraPointTeamA"
+                android:text="@string/extraPoint" />
+
+            <Button
+                style="@style/buttonMargins"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:onClick="safetyTeamA"
+                android:text="@string/safety" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/darker_gray" />
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:padding="16dp"
+                android:text="@string/otherTeam"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/team_b_score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:padding="4dp"
+                android:text="@string/zeroPoints"
+                android:textColor="#FFFFFF"
+                android:textSize="56sp" />
+
+            <Button
+                style="@style/buttonMargins"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:onClick="touchdownTeamB"
+                android:text="@string/touchdown" />
+
+            <Button
+                style="@style/buttonMargins"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="fieldGoalTeamB"
+                android:text="@string/fieldGoal" />
+
+            <Button
+                style="@style/buttonMargins"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="extraPointTeamB"
+                android:text="@string/extraPoint" />
+
+            <Button
+                style="@style/buttonMargins"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:onClick="safetyTeamB"
+                android:text="@string/safety" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginBottom="64dp"
+        android:onClick="removeLastScore"
+        android:text="@string/undo" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp"
+        android:onClick="resetScore"
+        android:text="@string/reset" />
+
+
+</RelativeLayout>
