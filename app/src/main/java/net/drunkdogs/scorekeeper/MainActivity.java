@@ -1,9 +1,11 @@
 package net.drunkdogs.scorekeeper;
 
 import android.content.pm.ActivityInfo;
-import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.util.Pair;
 import android.view.Gravity;
 import android.view.View;
@@ -20,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     final int TOUCHDOWN = 6;
     final int FIELDGOAL = 3;
     final int EXTRAPOINT = 1;
-    final int SAFTEYPOINT =2;
+    final int SAFTEYPOINT = 2;
 
     // Used for UndoList
     ArrayList<Pair> undoList = new ArrayList<>();
@@ -33,10 +35,13 @@ public class MainActivity extends AppCompatActivity {
         // Set the screen to portrait only. also could add to AndroidManifest
         // android:screenOrientation="portrait"
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        resetScore(null);
+
     }
 
     /**
-     * This following methods will update the score and display
+     * The following methods will update the score and display
      */
     public void touchdownTeamA(View view){
         scoreTeamA += TOUCHDOWN;
@@ -62,6 +67,14 @@ public class MainActivity extends AppCompatActivity {
         displayForTeamA(scoreTeamA);
     }
 
+    /**
+     * Displays the given score for Team A.
+     */
+    public void displayForTeamA(int score) {
+        TextView scoreView = findViewById(R.id.team_a_score);
+        scoreView.setText(String.valueOf(score));
+    }
+
     public void touchdownTeamB(View view){
         scoreTeamB += TOUCHDOWN;
         addToUndoList(TOUCHDOWN, "TeamB");
@@ -84,6 +97,14 @@ public class MainActivity extends AppCompatActivity {
         scoreTeamB += SAFTEYPOINT;
         addToUndoList(SAFTEYPOINT, "TeamB");
         displayForTeamB(scoreTeamB);
+    }
+
+    /**
+     * Displays the given score for Team B.
+     */
+    public void displayForTeamB(int score) {
+        TextView scoreView = findViewById(R.id.team_b_score);
+        scoreView.setText(String.valueOf(score));
     }
 
 
@@ -135,25 +156,9 @@ public class MainActivity extends AppCompatActivity {
 //            TextView text = toastView.findViewById(android.R.id.message);
 //            text.setTextColor(Color.WHITE);
 
-            toast.setGravity(Gravity.CENTER, 0, -210);
+            toast.setGravity(Gravity.CENTER, 0, 0);
             toast.show();
         }
-    }
-
-    /**
-     * Displays the given score for Team A.
-     */
-    public void displayForTeamA(int score) {
-        TextView scoreView = findViewById(R.id.team_a_score);
-        scoreView.setText(String.valueOf(score));
-    }
-
-    /**
-     * Displays the given score for Team B.
-     */
-    public void displayForTeamB(int score) {
-        TextView scoreView = findViewById(R.id.team_b_score);
-        scoreView.setText(String.valueOf(score));
     }
 
 }

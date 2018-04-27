@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#dfdfdf"
     tools:context="net.drunkdogs.scorekeeper.MainActivity">
 
     <ImageView
@@ -33,7 +31,7 @@
                 android:gravity="center"
                 android:padding="16dp"
                 android:text="@string/homeName"
-                android:textColor="#ffffff"
+                android:textColor="@android:color/white"
                 android:textSize="18sp" />
 
             <TextView
@@ -44,9 +42,9 @@
                 android:fontFamily="sans-serif-light"
                 android:gravity="center"
                 android:padding="4dp"
-                android:text="@string/zeroPoints"
-                android:textColor="#FFFFFF"
-                android:textSize="56sp" />
+                android:textColor="@android:color/white"
+                android:textSize="56sp"
+                tools:text="0" />
 
             <Button
                 style="@style/buttonMargins"
@@ -101,8 +99,8 @@
                 android:gravity="center"
                 android:padding="16dp"
                 android:text="@string/otherTeam"
-                android:textColor="#FFFFFF"
-                android:textSize="18sp" />
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/teamSize" />
 
             <TextView
                 android:id="@+id/team_b_score"
@@ -112,9 +110,9 @@
                 android:fontFamily="sans-serif-light"
                 android:gravity="center"
                 android:padding="4dp"
-                android:text="@string/zeroPoints"
-                android:textColor="#FFFFFF"
-                android:textSize="56sp" />
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/scoreSize"
+                tools:text="0" />
 
             <Button
                 style="@style/buttonMargins"
